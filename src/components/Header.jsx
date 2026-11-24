@@ -1,28 +1,24 @@
 import logo from '../assets/maintenance.png'
 
-const menu = [
-    { label: 'Beranda', href: '#beranda' },
-    { label: 'Kategori', href: '#kategori' },
-    { label: 'Produk', href: '#produk' },
-    { label: 'Kontak', href: '#kontak' },
-]
-
-function Header() {
+function Header(props) {
     return (
         <header className="flex justify-between items-center px-10 py-3 bg-[#1c1c1c] text-white">
-        <div className="flex items-center gap-2.5 text-2xl font-bold">
-            <img src={logo} alt="Logo SparepartKu" className="h-12" />
+        <div className="flex items-center gap-2 text-2xl font-bold">
+            <img src={logo} alt="Logo" className="h-12" />
             <span>SparepartKu</span>
         </div>
+
         <nav>
-            <ul className="flex gap-6">
-            {menu.map((item) => (
-                <li key={item.href}>
-                <a href={item.href} className="hover:text-[#e63946]">
-                    {item.label}
-                </a>
-                </li>
-            ))}
+            <ul className="flex items-center gap-6">
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#kategori">Kategori</a></li>
+            <li><a href="#produk">Produk</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+            <li className="flex items-center gap-2">
+                <button onClick={props.kurangi} className="px-2 bg-white text-black rounded">-</button>
+                <span>🛒 {props.jumlah}</span>
+                <button onClick={props.reset} className="px-2 bg-red-600 rounded">Reset</button>
+            </li>
             </ul>
         </nav>
         </header>

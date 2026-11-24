@@ -1,0 +1,10 @@
+[
+    { "id": 1, "ikon": "🛢️", "nama": "Oli Mesin 4L", "harga": "350.000" },
+    { "id": 2, "ikon": "🔋", "nama": "Aki Mobil 45Ah", "harga": "850.000" },
+    { "id": 3, "ikon": "🛑", "nama": "Kampas Rem Depan", "harga": "275.000" },
+    { "id": 4, "ikon": "🌬️", "nama": "Filter Udara", "harga": "95.000" },
+    { "id": 5, "ikon": "⚡", "nama": "Busi Iridium (4 pcs)", "harga": "320.000" },
+    { "id": 6, "ikon": "🛞", "nama": "Ban Mobil 185/65 R15", "harga": "650.000" },
+    { "id": 7, "ikon": "💡", "nama": "Lampu Depan LED", "harga": "180.000" },
+    { "id": 8, "ikon": "🧴", "nama": "Minyak Rem DOT 4", "harga": "45.000" }
+]
