@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
-import ProductCard from './ProductCard'
+import ProductCard from '../components/ProductCard'
 
 function Produk(props) {
-    const [daftarProduk, setDaftarProduk] = useState([]) // data dari JSON
-    const [loading, setLoading] = useState(true)         // sedang memuat?
+    const [daftarProduk, setDaftarProduk] = useState([])
+    const [loading, setLoading] = useState(true)
 
-    // useEffect: ambil data sekali saja saat komponen pertama tampil
+    // useEffect: ambil data sekali saja saat halaman pertama tampil
     useEffect(() => {
         fetch('/produk.json')
         .then((respon) => respon.json())
@@ -13,11 +13,15 @@ function Produk(props) {
             setDaftarProduk(data)
             setLoading(false)
         })
+        .catch((err) => {
+            console.log('Gagal ambil data:', err)
+            setLoading(false)
+        })
     }, [])
 
     return (
-        <section id="produk" className="px-10 py-16 bg-gray-100">
-        <h2 className="mb-4 text-2xl font-bold">Produk Terlaris</h2>
+        <section className="px-10 py-16 bg-gray-100">
+        <h1 className="mb-4 text-2xl font-bold">Produk Terlaris</h1>
 
         {loading && <p>Memuat produk...</p>}
 
@@ -25,6 +29,7 @@ function Produk(props) {
             {daftarProduk.map((produk) => (
             <ProductCard
                 key={produk.id}
+                id={produk.id}
                 ikon={produk.ikon}
                 nama={produk.nama}
                 harga={produk.harga}
